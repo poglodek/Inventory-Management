@@ -50,10 +50,11 @@ namespace Inventory_Management.Database
             return true;
         }
 
-        public void UpdateDocument<T>(string collectionName, T document, Guid id)
+        public void UpdateDocument<T>(string collectionName, T document, Guid id) where T : BaseEntity
         {
             var collection = _mongoDatabase.GetCollection<T>(collectionName);
             var filter = Builders<T>.Filter.Eq("_id", id);
+            document.Id = id;
             collection.ReplaceOne(filter, document, new ReplaceOptions { IsUpsert = false });
         }
     }

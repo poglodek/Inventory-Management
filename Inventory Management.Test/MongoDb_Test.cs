@@ -72,8 +72,7 @@ namespace Inventory_Management.Test
                 Count = 12,
                 Name = "Wooden desk",
                 Price = 99.99,
-                Tax = 19.0,
-                Id = id
+                Tax = 19.0
             };
             mongoDb.UpdateDocument("Items",item,id);
         }
