@@ -7,10 +7,8 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Inventory_Management.Database.Entity
 {
-    public class Stocktaking
+    public class Stocktaking : BaseEntity
     {
-        [BsonId]
-        public Guid Id {  get; set; }
         public Item Item {  get; set; }
         public int CountBeforeStocktaking { get; set; }
         public int CountAfterStocktaking { get; set; }

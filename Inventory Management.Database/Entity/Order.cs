@@ -8,10 +8,8 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace Inventory_Management.Database.Entity
 {
-    public class Order
+    public class Order : BaseEntity
     {
-        [BsonId]
-        public Guid Id { get; set; }
         public List<Item> Items {  get; set; }
         public Client Client {  get; set; }
         public DateTime DateOfBuy {  get; set; }
