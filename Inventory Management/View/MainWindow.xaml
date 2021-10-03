@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inventory_Management"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="1000">
+    <Grid> 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200" MaxWidth="200" />
+            <ColumnDefinition Width="*"  />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <StackPanel.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#45823d" Offset="0"/>
+                    <GradientStop Color="#52db40" Offset="0.5"/>
+                    <GradientStop Color="#45823d" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <Button Content="Items" Style="{StaticResource MenuButton}" />
+            <Button Content="Clients"  Style="{StaticResource MenuButton}"/>
+            <Button Content="Orders"  Style="{StaticResource MenuButton}"/>
+            <Button Content="Stock taking"  Style="{StaticResource MenuButton}"/>
+            <Button Content="FV"  Style="{StaticResource MenuButton}"/>
+            <Button Content="My Data"  Style="{StaticResource MenuButton}"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            
+            <StackPanel.Background>
+                <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                    <GradientStop Color="#686b68" Offset="0"/>
+                    <GradientStop Color="#535453" Offset="0.5"/>
+                    <GradientStop Color="#686b68" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <ContentControl Content="{Binding Path=ViewModel}" />
+        </StackPanel>
+        
+       
 
     </Grid>
 </Window>

@@ -10,22 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Inventory_Management.ViewModel;
 
-namespace Inventory_Management
+namespace Inventory_Management.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Clients.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Clients : UserControl
     {
-        public MainWindow()
+        public Clients()
         {
             InitializeComponent();
-
-            DataContext = new MainWindowViewModel();
         }
     }
 }
