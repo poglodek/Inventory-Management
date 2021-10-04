@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Inventory_Management.ViewModel;
 
 namespace Inventory_Management.View
 {
@@ -22,6 +23,7 @@ namespace Inventory_Management.View
         public Clients()
         {
             InitializeComponent();
+            DataContext = new ClientsViewModel();
         }
     }
 }
