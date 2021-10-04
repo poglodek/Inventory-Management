@@ -19,12 +19,12 @@
                     <GradientStop Color="#45823d" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <Button Content="Items" Style="{StaticResource MenuButton}" />
-            <Button Content="Clients"  Style="{StaticResource MenuButton}"/>
-            <Button Content="Orders"  Style="{StaticResource MenuButton}"/>
-            <Button Content="Stock taking"  Style="{StaticResource MenuButton}"/>
-            <Button Content="FV"  Style="{StaticResource MenuButton}"/>
-            <Button Content="My Data"  Style="{StaticResource MenuButton}"/>
+            <Button Content="Items" Style="{StaticResource MenuButton}" Command="{Binding Path=UpdateViewCommand}" CommandParameter="Items" />
+            <Button Content="Clients"  Style="{StaticResource MenuButton}" Command="{Binding Path=UpdateViewCommand}" CommandParameter="Clients" />
+            <Button Content="Orders"  Style="{StaticResource MenuButton}" Command="{Binding Path=UpdateViewCommand}" CommandParameter="Orders"/>
+            <Button Content="Stock taking"  Style="{StaticResource MenuButton}" Command="{Binding Path=UpdateViewCommand}" CommandParameter="Stocktaking"/>
+            <Button Content="FV"  Style="{StaticResource MenuButton}"  Command="{Binding Path=UpdateViewCommand}" CommandParameter="FV"/>
+            <Button Content="My Data"  Style="{StaticResource MenuButton}"  Command="{Binding Path=UpdateViewCommand}" CommandParameter="MyData"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
             

@@ -12,6 +12,18 @@
         <DataTemplate DataType="{x:Type vm:ClientsViewModel}">
             <views:Clients />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:FVViewModel}">
+            <views:FV />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MyDataViewModel}">
+            <views:MyData />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OrdersViewModel}">
+            <views:Orders />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:StockTakingViewModel}">
+            <views:StockTaking />
+        </DataTemplate>
         <Style TargetType="{x:Type Button}" x:Key="MenuButton">
             <Setter Property="Margin" Value="10" />
             <Setter Property="FontSize" Value="20" />

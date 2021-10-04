@@ -8,6 +8,6 @@
         Height="auto" Width="auto"
         >
     <Grid>
-        <Label Content="items" />
+        <TextBlock TextWrapping="Wrap"   Text="items items items items items items items items items items items items items items items items items items items items items items items items items items items items items items items   "  />
     </Grid>
 </UserControl>
