@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31717.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory Management", "Inventory Management\Inventory Management.csproj", "{EA116880-FE68-4D6E-AD84-7CD69E4E02B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory Management", "Inventory Management\Inventory Management.csproj", "{EA116880-FE68-4D6E-AD84-7CD69E4E02B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory Management.Test", "Inventory Management.Test\Inventory Management.Test.csproj", "{A8D6F222-7770-46D7-8AB0-67EC9B6CADBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory Management.Test", "Inventory Management.Test\Inventory Management.Test.csproj", "{A8D6F222-7770-46D7-8AB0-67EC9B6CADBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory Management.Database", "Inventory Management.Database\Inventory Management.Database.csproj", "{04155AEA-C509-4923-9380-B8EAA9D27ED3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventory Management.Database", "Inventory Management.Database\Inventory Management.Database.csproj", "{04155AEA-C509-4923-9380-B8EAA9D27ED3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -3,25 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Inventory_Management"
              xmlns:views="clr-namespace:Inventory_Management.View"
-             xmlns:vm="clr-namespace:Inventory_Management.ViewModel"
+             xmlns:viewModel="clr-namespace:Inventory_Management.ViewModel"
              StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-        <DataTemplate DataType="{x:Type vm:ItemsViewModel}">
+        <DataTemplate DataType="{x:Type viewModel:ItemsViewModel}">
             <views:Items />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:ClientsViewModel}">
+        <DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
             <views:Clients />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:FVViewModel}">
+        <DataTemplate DataType="{x:Type viewModel:FVViewModel}">
             <views:FV />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:MyDataViewModel}">
+        <DataTemplate DataType="{x:Type viewModel:MyDataViewModel}">
             <views:MyData />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:OrdersViewModel}">
+        <DataTemplate DataType="{x:Type viewModel:OrdersViewModel}">
             <views:Orders />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:StockTakingViewModel}">
+        <DataTemplate DataType="{x:Type viewModel:StockTakingViewModel}">
             <views:StockTaking />
         </DataTemplate>
         <Style TargetType="{x:Type Button}" x:Key="MenuButton">

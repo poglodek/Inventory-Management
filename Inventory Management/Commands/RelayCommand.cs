@@ -25,10 +25,6 @@ namespace Inventory_Management.Commands
             _Execute(parameter);
         }
 
-        public event EventHandler CanExecuteChanged
-        {
-            add => CommandManager.RequerySuggested += value;
-            remove => CommandManager.RequerySuggested -= value;
-        }
+        public event EventHandler CanExecuteChanged;
     }
 }

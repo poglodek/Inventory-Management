@@ -9,11 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="PdfSharp" Version="1.50.5147" />
+    <ProjectReference Include="..\Inventory Management.Database\Inventory Management.Database.csproj" />
   </ItemGroup>
 
 </Project>

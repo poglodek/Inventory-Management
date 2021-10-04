@@ -1,11 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net6.0-windows</TargetFramework>
+	 
     <RootNamespace>Inventory_Management.Test</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Command\**" />
+    <Compile Remove="Viewmodel\**" />
+    <EmbeddedResource Remove="Command\**" />
+    <EmbeddedResource Remove="Viewmodel\**" />
+    <None Remove="Command\**" />
+    <None Remove="Viewmodel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="ViewModel\MainWindowViewModel_Test.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoFixture.AutoMoq" Version="4.17.0" />
@@ -16,6 +31,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Inventory Management.Database\Inventory Management.Database.csproj" />
+    <ProjectReference Include="..\Inventory Management\Inventory Management.csproj" />
+    
   </ItemGroup>
 
 </Project>
