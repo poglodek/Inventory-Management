@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inventory_Management.View"
         mc:Ignorable="d"
-        Height="700"
+        Height="710"
 >
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition  Height="50"/>
+            <RowDefinition  Height="60"/>
             <RowDefinition  />
         </Grid.RowDefinitions>
-        <WrapPanel Orientation="Horizontal" Background="red">
+        <WrapPanel Orientation="Horizontal" Background="#445b91">
             <Button Content="Add Item" Style="{StaticResource MenuButton}" Width="100"/>
             <Button Content="Edit Item" Style="{StaticResource MenuButton}" />
             <Button Content="Remove Item" Style="{StaticResource MenuButton}" />
