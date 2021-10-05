@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Inventory_Management.Database;
 using Inventory_Management.Database.Entity;
+using Inventory_Management.Model;
 using Moq;
 using NUnit.Framework;
 

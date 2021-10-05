@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Inventory_Management.Database.Model;
-using MongoDB.Bson.Serialization.Attributes;
+using Inventory_Management.Database.Entity;
 
-namespace Inventory_Management.Database.Entity
+namespace Inventory_Management.Model
 {
     public class Order : BaseEntity
     {

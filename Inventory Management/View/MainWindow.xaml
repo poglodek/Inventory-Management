@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Inventory_Management"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="700" Width="1200">
     <Grid> 
         <Grid.ColumnDefinitions>
             <ColumnDefinition MinWidth="200" MaxWidth="200" />
