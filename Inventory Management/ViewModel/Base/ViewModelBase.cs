@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows;
+using System.Windows.Input;
 using Inventory_Management.Database;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,11 +12,11 @@ namespace Inventory_Management.ViewModel.Base
 {
     public class ViewModelBase : INotifyPropertyChanged, INotifyDataErrorInfo
     {
-        protected readonly MongoDb _mongoDb;
+        public MongoDb _mongoDb;
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private Dictionary<string, List<string>> _propertyErrors; 
-
+        private Dictionary<string, List<string>> _propertyErrors;
+        public ICommand AddDocument { get; set; }
         public ViewModelBase()
         {
             _mongoDb = new MongoDb("InventoryManagement");
@@ -24,14 +26,19 @@ namespace Inventory_Management.ViewModel.Base
         {
             foreach (var property in nameProperty)
                 if (property != null) PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-
+            
         }
 
+        
         public IEnumerable GetErrors(string? propertyName)
         {
             return _propertyErrors.GetValueOrDefault(propertyName, null);
         }
 
+        public void ClearErrors(string propertyName)
+        {
+            _propertyErrors.Remove(propertyName);
+        }
         public bool HasErrors
         {
             get => _propertyErrors.Any();
@@ -45,6 +52,11 @@ namespace Inventory_Management.ViewModel.Base
                 _propertyErrors.Add(propertyName, new List<string>());
             }
             _propertyErrors[propertyName].Add(errorMessage);
+            foreach (var error in _propertyErrors)
+                 foreach (var message in error.Value)
+                 {
+                     MessageBox.Show(message);
+                 }
         }
 
         protected void OnErrorsChanged(string propertyName)

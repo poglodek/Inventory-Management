@@ -41,11 +41,6 @@ namespace Inventory_Management.Database
             return collection.AsQueryable<T>().ToList();
         }
 
-        public bool RemoveDocumentByDocument<T>(string collectionName, T document) where T : BaseEntity
-        {
-            
-            return RemoveDocumentById<T>(collectionName, document.Id); 
-        }
         public bool RemoveDocumentById<T>(string collectionName, Guid id)
         {
             var collection = _mongoDatabase.GetCollection<T>(collectionName);
@@ -61,5 +56,6 @@ namespace Inventory_Management.Database
             document.Id = id;
             collection.ReplaceOne(filter, document, new ReplaceOptions { IsUpsert = false });
         }
+
     }
 }

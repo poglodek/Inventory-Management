@@ -14,7 +14,7 @@
             <RowDefinition  />
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" Background="#445b91">
-            <Button Content="Add Item" Style="{StaticResource MenuButton}" Width="100"/>
+            <Button Content="Add Item" Style="{StaticResource MenuButton}" Width="100" Command="{Binding Path=AddDocument}" CommandParameter="AddItem"/>
             <Button Content="Edit Item" Style="{StaticResource MenuButton}" />
             <Button Content="Remove Item" Style="{StaticResource MenuButton}" Command="{Binding Path=RemoveItem}"/>
         </WrapPanel>

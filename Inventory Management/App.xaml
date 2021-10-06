@@ -4,9 +4,9 @@
              xmlns:local="clr-namespace:Inventory_Management"
              xmlns:views="clr-namespace:Inventory_Management.View"
              xmlns:viewModel="clr-namespace:Inventory_Management.ViewModel"
-             >
+             xmlns:item="clr-namespace:Inventory_Management.ViewModel.Item">
     <Application.Resources>
-        <DataTemplate DataType="{x:Type viewModel:ItemsViewModel}">
+        <DataTemplate DataType="{x:Type item:ItemsViewModel}">
             <views:Items />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
@@ -51,8 +51,29 @@
                     <DropShadowEffect Color="Black" Direction="320" ShadowDepth="3" BlurRadius="5" Opacity="0.5" />
                 </Setter.Value>
             </Setter>
-
-
+        </Style>
+        <Style TargetType="{x:Type Grid}" x:Key="Grid">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                        <GradientStop Color="#686b68" Offset="0"/>
+                        <GradientStop Color="#535453" Offset="0.5"/>
+                        <GradientStop Color="#686b68" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="TextBox">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+                        <GradientStop Color="#686b68" Offset="0"/>
+                        <GradientStop Color="#535453" Offset="0.5"/>
+                        <GradientStop Color="#686b68" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Foreground" Value="White" />
         </Style>
     </Application.Resources>
 </Application>

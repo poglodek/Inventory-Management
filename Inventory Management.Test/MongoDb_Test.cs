@@ -35,7 +35,7 @@ namespace Inventory_Management.Test
             Assert.IsTrue(result);
 
 
-            var removeResult = mongoDb.RemoveDocument<Item>("Items",item.Id);
+            var removeResult = mongoDb.RemoveDocumentById<Item>("Items",item.Id);
             Assert.IsTrue(removeResult);
         }
 

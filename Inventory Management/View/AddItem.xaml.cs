@@ -11,21 +11,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Inventory_Management.ViewModel;
 using Inventory_Management.ViewModel.Item;
-
 
 namespace Inventory_Management.View
 {
     /// <summary>
-    /// Interaction logic for Items.xaml
+    /// Interaction logic for AddItem.xaml
     /// </summary>
-    public partial class Items : UserControl
+    public partial class AddItem : Window
     {
-        public Items()
+        public AddItem()
         {
             InitializeComponent();
-            DataContext = new ItemsViewModel();
+            DataContext = new AddItemViewModel(); 
+
         }
     }
 }

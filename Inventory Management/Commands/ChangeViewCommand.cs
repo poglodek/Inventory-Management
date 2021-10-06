@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Inventory_Management.ViewModel;
+using Inventory_Management.ViewModel.Item;
 
-namespace Inventory_Management.Commands.MainWindow
+namespace Inventory_Management.Commands
 {
     public class ChangeViewCommand : ICommand
     {

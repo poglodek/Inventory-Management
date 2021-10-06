@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Inventory_Management.Commands.MainWindow;
+using Inventory_Management.Commands;
 using Inventory_Management.ViewModel.Base;
+using Inventory_Management.ViewModel.Item;
 
 namespace Inventory_Management.ViewModel
 {
