@@ -16,11 +16,11 @@
         <WrapPanel Orientation="Horizontal" Background="#445b91">
             <Button Content="Add Item" Style="{StaticResource MenuButton}" Width="100"/>
             <Button Content="Edit Item" Style="{StaticResource MenuButton}" />
-            <Button Content="Remove Item" Style="{StaticResource MenuButton}" />
+            <Button Content="Remove Item" Style="{StaticResource MenuButton}" Command="{Binding Path=RemoveItem}"/>
         </WrapPanel>
         <StackPanel Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto" Height="600">
-                <ListBox ItemsSource="{Binding Items}" >
+                <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Path=SelectedItem}" >
                     <ListBox.Template>
                         <ControlTemplate>
                             <DockPanel LastChildFill="True">

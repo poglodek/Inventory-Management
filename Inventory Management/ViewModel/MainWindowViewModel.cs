@@ -11,11 +11,13 @@ namespace Inventory_Management.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        private ViewModelBase viewModel = new ItemsViewModel();
+        
+        private ViewModelBase viewModel;
 
-        public MainWindowViewModel()
+        public MainWindowViewModel() 
         {
             UpdateViewCommand = new ChangeViewCommand(this);
+            viewModel = new ItemsViewModel();
         }
         public ViewModelBase ViewModel
         {

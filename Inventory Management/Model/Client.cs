@@ -1,4 +1,4 @@
-﻿using Inventory_Management.Database.Entity;
+﻿using Inventory_Management.Database;
 
 namespace Inventory_Management.Model
 {

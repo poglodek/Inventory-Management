@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Inventory_Management.ViewModel;
 
+
 namespace Inventory_Management.View
 {
     /// <summary>

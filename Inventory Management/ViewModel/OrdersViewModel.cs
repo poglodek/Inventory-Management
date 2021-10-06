@@ -9,6 +9,8 @@ namespace Inventory_Management.ViewModel
 {
     public class OrdersViewModel : ViewModelBase
     {
-        
+        public OrdersViewModel()
+        {
+        }
     }
 }

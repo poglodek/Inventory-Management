@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Inventory_Management.ViewModel;
 
+
 namespace Inventory_Management
 {
     /// <summary>

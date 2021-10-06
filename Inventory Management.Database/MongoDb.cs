@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Inventory_Management.Database.Entity;
 using MongoDB.Driver;
 
 namespace Inventory_Management.Database
@@ -42,7 +41,12 @@ namespace Inventory_Management.Database
             return collection.AsQueryable<T>().ToList();
         }
 
-        public bool RemoveDocument<T>(string collectionName, Guid id)
+        public bool RemoveDocumentByDocument<T>(string collectionName, T document) where T : BaseEntity
+        {
+            
+            return RemoveDocumentById<T>(collectionName, document.Id); 
+        }
+        public bool RemoveDocumentById<T>(string collectionName, Guid id)
         {
             var collection = _mongoDatabase.GetCollection<T>(collectionName);
             var filter = Builders<T>.Filter.Eq("_id", id);

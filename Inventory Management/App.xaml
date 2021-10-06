@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:Inventory_Management"
              xmlns:views="clr-namespace:Inventory_Management.View"
              xmlns:viewModel="clr-namespace:Inventory_Management.ViewModel"
-             StartupUri="View/MainWindow.xaml">
+             >
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewModel:ItemsViewModel}">
             <views:Items />

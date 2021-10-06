@@ -10,11 +10,11 @@ namespace Inventory_Management.Commands.MainWindow
 {
     public class ChangeViewCommand : ICommand
     {
-        private MainWindowViewModel viewModel;
+        private readonly MainWindowViewModel _viewModel;
 
         public ChangeViewCommand(MainWindowViewModel viewModel)
         {
-            this.viewModel = viewModel;
+            _viewModel = viewModel;
         }
 
         public bool CanExecute(object? parameter)
@@ -27,24 +27,26 @@ namespace Inventory_Management.Commands.MainWindow
             switch (parameter.ToString())
             {
                 case "Items":
-                    viewModel.ViewModel = new ItemsViewModel();
+                    _viewModel.ViewModel = new ItemsViewModel();
                     break;
                 case "Clients":
-                    viewModel.ViewModel = new ClientsViewModel();
+                    _viewModel.ViewModel = new ClientsViewModel();
                     break;
                 case "FV":
-                    viewModel.ViewModel = new FVViewModel();
+                    _viewModel.ViewModel = new FVViewModel();
                     break;
                 case "MyData":
-                    viewModel.ViewModel = new MyDataViewModel();
+                    _viewModel.ViewModel = new MyDataViewModel();
                     break;
                 case "Stocktaking":
-                    viewModel.ViewModel = new StockTakingViewModel();
+                    _viewModel.ViewModel = new StockTakingViewModel();
                     break;
                 case "Orders":
-                    viewModel.ViewModel = new OrdersViewModel();
+                    _viewModel.ViewModel = new OrdersViewModel();
                     break;
             }
+                
+            
         }
 
         public event EventHandler? CanExecuteChanged;

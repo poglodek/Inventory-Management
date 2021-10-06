@@ -10,11 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Command\**" />
     <Compile Remove="Viewmodel\**" />
-    <EmbeddedResource Remove="Command\**" />
     <EmbeddedResource Remove="Viewmodel\**" />
-    <None Remove="Command\**" />
     <None Remove="Viewmodel\**" />
   </ItemGroup>
 
@@ -36,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="Command\" />
   </ItemGroup>
 
 </Project>
