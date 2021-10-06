@@ -23,8 +23,7 @@ namespace Inventory_Management.View
         public AddItem()
         {
             InitializeComponent();
-            DataContext = new AddItemViewModel(); 
-
+            DataContext = new AddItemViewModel();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Inventory_Management.Commands;
 using Inventory_Management.ViewModel.Base;
 
+
 namespace Inventory_Management.ViewModel.Item
 {
     public class ItemsViewModel : ViewModelBase, ViewModelItemBase<Model.Item>
@@ -15,6 +16,10 @@ namespace Inventory_Management.ViewModel.Item
             GetList();
             RemoveItem = new RemoveDocumentCommand(this,"Items",_mongoDb);
             AddDocument = new AddDocumentViewCommand();
+            Refresh = new RelayCommand(x =>
+            {
+                GetList();
+            });
         }
 
         
@@ -43,6 +48,7 @@ namespace Inventory_Management.ViewModel.Item
         #region Commands
 
         public ICommand RemoveItem { get; set; }
+        public ICommand Refresh { get; set; }
        
 
 

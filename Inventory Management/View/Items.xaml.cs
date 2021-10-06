@@ -27,5 +27,6 @@ namespace Inventory_Management.View
             InitializeComponent();
             DataContext = new ItemsViewModel();
         }
+
     }
 }

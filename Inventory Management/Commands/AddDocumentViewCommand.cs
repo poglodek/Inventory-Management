@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Inventory_Management.View;
+using Inventory_Management.ViewModel.Item;
 
 namespace Inventory_Management.Commands
 {
     public class AddDocumentViewCommand : ICommand
     {
+
         public bool CanExecute(object? parameter)
         {
             return true;
