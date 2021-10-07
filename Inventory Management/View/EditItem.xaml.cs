@@ -16,14 +16,14 @@ using Inventory_Management.ViewModel.Item;
 namespace Inventory_Management.View
 {
     /// <summary>
-    /// Interaction logic for AddItem.xaml
+    /// Interaction logic for EditItem.xaml
     /// </summary>
-    public partial class AddItem : Window
+    public partial class EditItem : Window
     {
-        public AddItem()
+        public EditItem(Guid id)
         {
             InitializeComponent();
-            DataContext = new ItemViewModel();
+            DataContext = new EditItemViewModel(id);
         }
     }
 }

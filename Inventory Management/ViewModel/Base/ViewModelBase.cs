@@ -16,7 +16,7 @@ namespace Inventory_Management.ViewModel.Base
 
         public event PropertyChangedEventHandler PropertyChanged;
         private Dictionary<string, List<string>> _propertyErrors;
-        public ICommand AddDocument { get; set; }
+        
         public ViewModelBase()
         {
             _mongoDb = new MongoDb("InventoryManagement");

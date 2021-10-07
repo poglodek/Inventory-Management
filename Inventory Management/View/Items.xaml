@@ -6,21 +6,20 @@
         xmlns:local="clr-namespace:Inventory_Management.View"
         mc:Ignorable="d"
         Height="710">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition  Height="60"/>
             <RowDefinition  />
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" Background="#445b91">
-            <Button Content="Add Item" Style="{StaticResource MenuButton}" Width="100" Command="{Binding Path=AddDocument}" CommandParameter="AddItem"/>
-            <Button Content="Edit Item" Style="{StaticResource MenuButton}" />
+            <Button Content="Add Item" Style="{StaticResource MenuButton}" Width="100" Command="{Binding Path=AddItem}"  />
+                <Button Content="Edit Item" Style="{StaticResource MenuButton}" Command="{Binding Path=EditItem}" CommandParameter="{Binding ElementName=ListItem, Path=SelectedItem}"/>
             <Button Content="Remove Item" Style="{StaticResource MenuButton}" Command="{Binding Path=RemoveItem}"/>
             <Button Content="Refresh" Style="{StaticResource MenuButton}" Command="{Binding Path=Refresh}"/>
         </WrapPanel>
         <StackPanel Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto" Height="600">
-                <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Path=SelectedItem}" >
+                <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Path=SelectedItem}" x:Name="ListItem">
                     <ListBox.Template>
                         <ControlTemplate>
                             <DockPanel LastChildFill="True">

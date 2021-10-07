@@ -15,7 +15,8 @@ namespace Inventory_Management.ViewModel.Item
             Items = new ObservableCollection<Model.Item>();
             GetList();
             RemoveItem = new RemoveDocumentCommand(this,"Items",_mongoDb);
-            AddDocument = new AddDocumentViewCommand();
+            AddItem = new OpenNewWindowCommand("AddItem");
+            EditItem = new OpenNewWindowCommand("EditItem");
             Refresh = new RelayCommand(x =>
             {
                 GetList();
@@ -47,6 +48,8 @@ namespace Inventory_Management.ViewModel.Item
 
         #region Commands
 
+        public ICommand AddItem { get; set; }
+        public ICommand EditItem { get; set; }
         public ICommand RemoveItem { get; set; }
         public ICommand Refresh { get; set; }
        

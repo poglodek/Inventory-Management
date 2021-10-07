@@ -4,14 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Inventory_Management.Model;
 using Inventory_Management.View;
 using Inventory_Management.ViewModel.Item;
 
 namespace Inventory_Management.Commands
 {
-    public class AddDocumentViewCommand : ICommand
+    public class OpenNewWindowCommand : ICommand
     {
+        private readonly string _viewName;
 
+        public OpenNewWindowCommand(string viewName)
+        {
+            _viewName = viewName;
+        }
         public bool CanExecute(object? parameter)
         {
             return true;
@@ -19,11 +25,15 @@ namespace Inventory_Management.Commands
 
         public void Execute(object? parameter)
         {
-            if (parameter is null) return;
-            switch (parameter as string)
+            if (_viewName is null) return;
+            switch (_viewName)
             {
                 case "AddItem":
                     new AddItem().Show();
+                    break;
+                case "EditItem":
+                    if (parameter is null) return;
+                    new EditItem(((Item)parameter).Id).Show();
                     break;
             }
         }

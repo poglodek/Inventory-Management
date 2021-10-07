@@ -20,12 +20,11 @@ namespace Inventory_Management.Test
         public void AddDocumentCommand_Test_Can_Create_Document_Should_Return_True()
         {
             var mocker = new AutoMoqer();
-            var addDocummentCommand = new Mock<AddDocumentCommand<Item>>(mocker.GetMock<AddDocumentViewModel<Item>>().Object, mocker.GetMock<ViewModelBase>().Object, new Mock<MongoDb>("AddDocumentCommand_Test").Object, "Items");
+            var addDocummentCommand = new Mock<AddDocumentCommand<Item>>(mocker.GetMock<DocumentViewModel<Item>>().Object, mocker.GetMock<ViewModelBase>().Object, new Mock<MongoDb>("AddDocumentCommand_Test").Object, "Items");
             var result = addDocummentCommand.Object.CanExecute(null);
 
             Assert.IsTrue(result);
         }
-        
-        
+
     }
 }

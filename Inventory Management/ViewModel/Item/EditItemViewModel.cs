@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -9,13 +10,13 @@ using Inventory_Management.ViewModel.Base;
 
 namespace Inventory_Management.ViewModel.Item
 {
-    public class AddItemViewModel : ViewModelBase, AddDocumentViewModel<Model.Item>
+    public class EditItemViewModel : ViewModelBase, DocumentViewModel<Model.Item>
     {
-        public AddItemViewModel()
+        public EditItemViewModel(Guid id)
         {
-            Document = new Model.Item();
-            Document.DateAdded = DateTime.Now;
-            AddDocument = new AddDocumentCommand<Model.Item>(this,this, _mongoDb, "Items");
+            Document = _mongoDb.GetDocumentById<Model.Item>("Items", id);
+            OnPropertyChanged(nameof(Document));
+            EditCommand = new EditDocumentCommand<Model.Item>(this, this, _mongoDb, "Items");
         }
 
         #region prop
@@ -49,9 +50,10 @@ namespace Inventory_Management.ViewModel.Item
                 }
                 else
                     Document.Price = value;
-                
+
             }
         }
+
         public double Tax
         {
             get => Document.Tax;
@@ -67,6 +69,7 @@ namespace Inventory_Management.ViewModel.Item
 
             }
         }
+
         public int Count
         {
             get => Document.Count;
@@ -84,17 +87,14 @@ namespace Inventory_Management.ViewModel.Item
         }
 
         public DateTime? DateExpiration
-        { 
+        {
             get => Document.DateExpiration;
-            set
-            {
-                Document.DateExpiration = value;
-            } 
+            set { Document.DateExpiration = value; }
         }
 
 
         #endregion
-        public ICommand AddDocument { get; set; }
-        
+
+        public ICommand EditCommand { get; set; }
     }
 }
