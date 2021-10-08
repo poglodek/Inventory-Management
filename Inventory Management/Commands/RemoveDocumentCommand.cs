@@ -11,13 +11,13 @@ using Inventory_Management.ViewModel.Base;
 
 namespace Inventory_Management.Commands
 {
-    public class RemoveDocumentCommand : ICommand
+    public class RemoveDocumentCommand<T> : ICommand where T : BaseEntity
     {
-        private readonly DocumentsViewModelBase<Item> _vm;
+        private readonly DocumentsViewModelBase<T> _vm;
         private readonly string _collectionName;
         private readonly MongoDb _mongoDb;
 
-        public RemoveDocumentCommand(DocumentsViewModelBase<Item> vm, string collectionName, MongoDb mongoDb)
+        public RemoveDocumentCommand(DocumentsViewModelBase<T> vm, string collectionName, MongoDb mongoDb)
         {
             _vm = vm;
             _collectionName = collectionName;
@@ -32,8 +32,8 @@ namespace Inventory_Management.Commands
             var result = MessageBox.Show("Delete this item?", "Delete", MessageBoxButton.OKCancel,
                 MessageBoxImage.Warning);
             if (result == MessageBoxResult.Cancel || result == MessageBoxResult.No) return;
-           _mongoDb.RemoveDocumentById<Item>(_collectionName, _vm.SelectedItem.Id);
-           _vm.SetList(_mongoDb.GetDocuments<Model.Item>("Items"));
+           _mongoDb.RemoveDocumentById<T>(_collectionName, _vm.SelectedItem.Id);
+           _vm.SetList(_mongoDb.GetDocuments<T>(_collectionName));
         }
 
 

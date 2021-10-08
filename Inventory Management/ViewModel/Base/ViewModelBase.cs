@@ -18,12 +18,14 @@ namespace Inventory_Management.ViewModel.Base
         public event PropertyChangedEventHandler PropertyChanged;
         private Dictionary<string, List<string>> _propertyErrors;
         protected IOrderingServices OrderingServices;
+        protected IValidationServices ValidationServices;
         
         public ViewModelBase()
         {
             _mongoDb = new MongoDb("InventoryManagement");
             _propertyErrors = new Dictionary<string, List<string>>();
             OrderingServices = new OrderingServices();
+            ValidationServices = new ValidationServices();
         }
         protected void OnPropertyChanged(params string[] nameProperty)
         {

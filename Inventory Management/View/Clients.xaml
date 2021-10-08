@@ -12,18 +12,10 @@
             <RowDefinition  />
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" Background="#445b91">
-            <Button Content="Add Client" Style="{StaticResource MenuButton}" Width="100" Command="{Binding Path=AddItem}"  />
-            <Button Content="Edit Client" Style="{StaticResource MenuButton}" Command="{Binding Path=EditItem}" CommandParameter="{Binding ElementName=ListItem, Path=SelectedItem}"/>
-            <Button Content="Remove Client" Style="{StaticResource MenuButton}" Command="{Binding Path=RemoveItem}"/>
+            <Button Content="Add Client" Style="{StaticResource MenuButton}" Width="100" Command="{Binding Path=AddClient}"  />
+            <Button Content="Edit Client" Style="{StaticResource MenuButton}" Command="{Binding Path=EditClient}" CommandParameter="{Binding ElementName=ListItem, Path=SelectedItem}"/>
+            <Button Content="Remove Client" Style="{StaticResource MenuButton}" Command="{Binding Path=RemoveClient}"/>
             <Button Content="Refresh" Style="{StaticResource MenuButton}" Command="{Binding Path=Refresh}"/>
-            <ComboBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectedIndex="{Binding Path=OrderByIndex}" Width="140" Height="30" Background="#eba834" FontSize="15"
-                      Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}" Margin="10" >
-                <ComboBoxItem Content="Name ^" />
-                <ComboBoxItem Content="Name V" />
-                <ComboBox.Effect>
-                    <DropShadowEffect Color="Black" Direction="310" ShadowDepth="12" BlurRadius="9" Opacity="0.4" />
-                </ComboBox.Effect>
-            </ComboBox>
             <TextBox Style="{StaticResource TextBox}" Width="170" Height="30" Foreground="Black" Background="#eba834" Text="{Binding Path=SearchingParse}" VerticalContentAlignment="Center">
                 <TextBox.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -35,7 +27,7 @@
         </WrapPanel>
         <StackPanel Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto" Height="600">
-                <ListBox ItemsSource="{Binding Items}" SelectedItem="{Binding Path=SelectedItem}" x:Name="ListItem">
+                <ListBox ItemsSource="{Binding Clients}" SelectedItem="{Binding Path=SelectedItem}" x:Name="ListItem">
                     <ListBox.Template>
                         <ControlTemplate>
                             <DockPanel LastChildFill="True">

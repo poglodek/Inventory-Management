@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Inventory_Management.ViewModel;
+using Inventory_Management.ViewModel.Client;
 using Inventory_Management.ViewModel.Item;
 
 namespace Inventory_Management.Commands

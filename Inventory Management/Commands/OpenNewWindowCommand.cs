@@ -31,6 +31,9 @@ namespace Inventory_Management.Commands
                 case "AddItem":
                     new AddItem().Show();
                     break;
+                case "AddClient":
+                    new AddClient().Show();
+                    break;
                 case "EditItem":
                     if (parameter is null) return;
                     new EditItem(((Item)parameter).Id).Show();

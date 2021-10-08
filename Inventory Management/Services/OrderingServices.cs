@@ -44,5 +44,9 @@ namespace Inventory_Management.Services
         {
             return list.Where(x => x.Name.ToUpper().Contains(searchingParse.ToUpper())).ToList();
         }
+        public List<Client> ClientSearchingParse(List<Client> list, string searchingParse)
+        {
+            return list.Where(x => x.Name.ToUpper().Contains(searchingParse.ToUpper())).ToList();
+        }
     }
 }

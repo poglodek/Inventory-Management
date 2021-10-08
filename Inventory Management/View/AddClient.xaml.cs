@@ -11,20 +11,20 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Inventory_Management.ViewModel;
 using Inventory_Management.ViewModel.Client;
 
 namespace Inventory_Management.View
 {
     /// <summary>
-    /// Interaction logic for Clients.xaml
+    /// Interaction logic for AddClient.xaml
     /// </summary>
-    public partial class Clients : UserControl
+    public partial class AddClient : Window
     {
-        public Clients()
+        public AddClient()
         {
             InitializeComponent();
-            DataContext = new ClientsViewModel();
+
+            DataContext = new ClientViewModel();
         }
     }
 }
