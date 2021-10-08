@@ -13,11 +13,11 @@ namespace Inventory_Management.Commands
 {
     public class RemoveDocumentCommand : ICommand
     {
-        private readonly ViewModelItemBase<Item> _vm;
+        private readonly DocumentsViewModelBase<Item> _vm;
         private readonly string _collectionName;
         private readonly MongoDb _mongoDb;
 
-        public RemoveDocumentCommand(ViewModelItemBase<Item> vm, string collectionName, MongoDb mongoDb)
+        public RemoveDocumentCommand(DocumentsViewModelBase<Item> vm, string collectionName, MongoDb mongoDb)
         {
             _vm = vm;
             _collectionName = collectionName;
@@ -33,7 +33,7 @@ namespace Inventory_Management.Commands
                 MessageBoxImage.Warning);
             if (result == MessageBoxResult.Cancel || result == MessageBoxResult.No) return;
            _mongoDb.RemoveDocumentById<Item>(_collectionName, _vm.SelectedItem.Id);
-           _vm.GetList();
+           _vm.SetList(_mongoDb.GetDocuments<Model.Item>("Items"));
         }
 
 

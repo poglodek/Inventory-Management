@@ -1,34 +1,51 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Windows.Documents;
 using System.Windows.Input;
 using Inventory_Management.Commands;
+using Inventory_Management.View;
 using Inventory_Management.ViewModel.Base;
 
 
 namespace Inventory_Management.ViewModel.Item
 {
-    public class ItemsViewModel : ViewModelBase, ViewModelItemBase<Model.Item>
+    public class ItemsViewModel : ViewModelBase, DocumentsViewModelBase<Model.Item>
     {
+        private List<Tuple<bool,string>> OrderStatus = new List<Tuple<bool, string>> ()
+        {
+            new Tuple<bool,string>(false,"Added"),
+            new Tuple<bool,string>(true,"Added"),
+            new Tuple<bool,string>(false,"Price"),
+            new Tuple<bool,string>(true,"Price"),
+            new Tuple<bool,string>(false,"Tax"),
+            new Tuple<bool,string>(true,"Tax"),
+            new Tuple<bool,string>(false,"Expiration"),
+            new Tuple<bool,string>(true,"Expiration"),
+            new Tuple<bool,string>(false,"Name"),
+            new Tuple<bool,string>(true,"Name")
+        };
+        
         public ObservableCollection<Model.Item> Items { get; set; } 
         public ItemsViewModel()
         {
             Items = new ObservableCollection<Model.Item>();
-            GetList();
+            SetList(_mongoDb.GetDocuments<Model.Item>("Items"));
             RemoveItem = new RemoveDocumentCommand(this,"Items",_mongoDb);
             AddItem = new OpenNewWindowCommand("AddItem");
             EditItem = new OpenNewWindowCommand("EditItem");
             Refresh = new RelayCommand(x =>
             {
-                GetList();
+                SetList(_mongoDb.GetDocuments<Model.Item>("Items"));
             });
         }
 
         
-        public void GetList()
+        public void SetList(List<Model.Item> documents)
         {
             Items.Clear();
-            var items = _mongoDb.GetDocuments<Model.Item>("Items");
-            foreach (var item in items)
+            //var items = _mongoDb.GetDocuments<Model.Item>("Items");
+            foreach (var item in documents)
             {
                 Items.Add(item);
             }
@@ -56,15 +73,16 @@ namespace Inventory_Management.ViewModel.Item
 
         #endregion
 
-        private string orderBy;
-        public string OrderBy
+        private int orderByIndex;
+        public int OrderByIndex
         {
-            get => orderBy;
+            get => orderByIndex;
             set
             {
-
-                orderBy = value;
+                orderByIndex = value;
+                SetList(OrderingServices.ItemOrderBy(new List<Model.Item>(Items), OrderStatus[orderByIndex].Item1, OrderStatus[orderByIndex].Item2));
             }
         }
+        
     }
 }

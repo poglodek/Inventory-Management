@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using Inventory_Management.Database;
+using Inventory_Management.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Inventory_Management.ViewModel.Base
@@ -16,11 +17,13 @@ namespace Inventory_Management.ViewModel.Base
 
         public event PropertyChangedEventHandler PropertyChanged;
         private Dictionary<string, List<string>> _propertyErrors;
+        protected IOrderingServices OrderingServices;
         
         public ViewModelBase()
         {
             _mongoDb = new MongoDb("InventoryManagement");
             _propertyErrors = new Dictionary<string, List<string>>();
+            OrderingServices = new OrderingServices();
         }
         protected void OnPropertyChanged(params string[] nameProperty)
         {

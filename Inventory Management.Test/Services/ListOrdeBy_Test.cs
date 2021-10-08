@@ -15,7 +15,7 @@ namespace Inventory_Management.Test.Services
         [Test]
         public void ListOrdeBy_Item_OrderBy_Name_ASC_Should_Return_True()
         {
-            var services = new ListOrderBy();
+            var services = new OrderingServices();
             var list = new List<Item>()
             {
                 new Item() { Name = "Wooden Chair" },
@@ -34,7 +34,7 @@ namespace Inventory_Management.Test.Services
         [Test]
         public void ListOrdeBy_Item_OrderBy_Name_DESC_Should_Return_True()
         {
-            var services = new ListOrderBy();
+            var services = new OrderingServices();
             var list = new List<Item>()
             {
                 new Item() { Name = "Metal Desk" },
@@ -54,7 +54,7 @@ namespace Inventory_Management.Test.Services
         [Test]
         public void ListOrdeBy_Item_OrderBy_Price_ASC_Should_Return_True()
         {
-            var services = new ListOrderBy();
+            var services = new OrderingServices();
             var list = new List<Item>()
             {
                 new Item() { Name = "Wooden Chair", Price=13 },
@@ -73,7 +73,7 @@ namespace Inventory_Management.Test.Services
         [Test]
         public void ListOrdeBy_Item_OrderBy_TAX_ASC_Should_Return_True()
         {
-            var services = new ListOrderBy();
+            var services = new OrderingServices();
             var list = new List<Item>()
             {
                 new Item() { Name = "Wooden Chair", Price=13, Tax=23.00 },
@@ -92,7 +92,7 @@ namespace Inventory_Management.Test.Services
         [Test]
         public void ListOrdeBy_Item_OrderBy_AddingDate_ASC_Should_Return_True()
         {
-            var services = new ListOrderBy();
+            var services = new OrderingServices();
             var list = new List<Item>()
             {
                 new Item() { Name = "Wooden Chair", Price=13, DateAdded= DateTime.Now.AddDays(1) },
@@ -112,7 +112,7 @@ namespace Inventory_Management.Test.Services
         [Test]
         public void ListOrdeBy_Item_OrderBy_ExpireDate_ASC_Should_Return_True()
         {
-            var services = new ListOrderBy();
+            var services = new OrderingServices();
             var list = new List<Item>()
             {
                 new Item() { Name = "Wooden Chair", Price=13, DateExpiration= DateTime.Now.AddDays(1) },
@@ -131,7 +131,7 @@ namespace Inventory_Management.Test.Services
         [Test]
         public void ListOrdeBy_Item_OrderBy_ExpireDate_DESC_Should_Return_True()
         {
-            var services = new ListOrderBy();
+            var services = new OrderingServices();
             var list = new List<Item>()
             {
                 new Item() { Name = "Wooden Chair", Price=13, DateExpiration= DateTime.Now.AddDays(1) },

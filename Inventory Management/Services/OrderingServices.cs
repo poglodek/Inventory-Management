@@ -8,9 +8,9 @@ using Inventory_Management.Model;
 
 namespace Inventory_Management.Services
 {
-    public class ListOrderBy
+    public class OrderingServices : IOrderingServices
     {
-        public List<Item> OrderBy(List<Item> list, bool descending, string propertyName)
+        public List<Item> ItemOrderBy(List<Item> list, bool descending, string propertyName)
         {
             List<Item> orderedList;
             switch (propertyName)
