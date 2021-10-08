@@ -31,9 +31,15 @@
                     <ComboBox.Effect>
                         <DropShadowEffect Color="Black" Direction="310" ShadowDepth="12" BlurRadius="9" Opacity="0.4" />
                     </ComboBox.Effect>
+            </ComboBox>
+            <TextBox Style="{StaticResource TextBox}" Width="170" Height="30" Foreground="Black" Background="#eba834" Text="{Binding Path=SearchingParse}" VerticalContentAlignment="Center">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="3"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
-                </ComboBox>
-           
         </WrapPanel>
         <StackPanel Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto" Height="600">

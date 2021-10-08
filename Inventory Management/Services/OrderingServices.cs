@@ -39,5 +39,10 @@ namespace Inventory_Management.Services
                 orderedList.Reverse();
             return orderedList;
         }
+
+        public List<Item> ItemSearchingParse(List<Item> list, string searchingParse)
+        {
+            return list.Where(x => x.Name.ToUpper().Contains(searchingParse.ToUpper())).ToList();
+        }
     }
 }

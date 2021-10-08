@@ -11,6 +11,6 @@ namespace Inventory_Management.Model
         public DateTime DateOfBuy {  get; set; }
         public string Payment {  get; set; }
         public string Comments {  get; set; }
-        public Address Address {  get; set; }
+        public string Address {  get; set; }
     }
 }

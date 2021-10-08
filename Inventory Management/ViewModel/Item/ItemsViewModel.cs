@@ -14,16 +14,16 @@ namespace Inventory_Management.ViewModel.Item
     {
         private List<Tuple<bool,string>> OrderStatus = new List<Tuple<bool, string>> ()
         {
-            new Tuple<bool,string>(false,"Added"),
-            new Tuple<bool,string>(true,"Added"),
-            new Tuple<bool,string>(false,"Price"),
-            new Tuple<bool,string>(true,"Price"),
-            new Tuple<bool,string>(false,"Tax"),
-            new Tuple<bool,string>(true,"Tax"),
-            new Tuple<bool,string>(false,"Expiration"),
-            new Tuple<bool,string>(true,"Expiration"),
-            new Tuple<bool,string>(false,"Name"),
-            new Tuple<bool,string>(true,"Name")
+            new(false,"Added"),
+            new(true,"Added"),
+            new(false,"Price"),
+            new(true,"Price"),
+            new(false,"Tax"),
+            new(true,"Tax"),
+            new(false,"Expiration"),
+            new(true,"Expiration"),
+            new(false,"Name"),
+            new(true,"Name")
         };
         
         public ObservableCollection<Model.Item> Items { get; set; } 
@@ -44,7 +44,6 @@ namespace Inventory_Management.ViewModel.Item
         public void SetList(List<Model.Item> documents)
         {
             Items.Clear();
-            //var items = _mongoDb.GetDocuments<Model.Item>("Items");
             foreach (var item in documents)
             {
                 Items.Add(item);
@@ -69,7 +68,7 @@ namespace Inventory_Management.ViewModel.Item
         public ICommand EditItem { get; set; }
         public ICommand RemoveItem { get; set; }
         public ICommand Refresh { get; set; }
-       
+
 
         #endregion
 
@@ -83,6 +82,19 @@ namespace Inventory_Management.ViewModel.Item
                 SetList(OrderingServices.ItemOrderBy(new List<Model.Item>(Items), OrderStatus[orderByIndex].Item1, OrderStatus[orderByIndex].Item2));
             }
         }
-        
+        private string searchingParse;
+        public string SearchingParse
+        {
+            get => searchingParse;
+            set
+            {
+                searchingParse = value;
+                if(string.IsNullOrWhiteSpace(searchingParse))
+                    SetList(_mongoDb.GetDocuments<Model.Item>("Items"));
+                else
+                    SetList(OrderingServices.ItemSearchingParse(new List<Model.Item>(Items), searchingParse));
+            }
+        }
+
     }
 }

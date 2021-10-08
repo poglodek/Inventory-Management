@@ -6,5 +6,6 @@ namespace Inventory_Management.Services
     public interface IOrderingServices
     {
         List<Item> ItemOrderBy(List<Item> list, bool descending, string propertyName);
+        List<Item> ItemSearchingParse(List<Item> list, string searchingParse);
     }
 }
