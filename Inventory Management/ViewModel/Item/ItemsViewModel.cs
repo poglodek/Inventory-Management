@@ -54,7 +54,17 @@ namespace Inventory_Management.ViewModel.Item
         public ICommand Refresh { get; set; }
        
 
-
         #endregion
+
+        private string orderBy;
+        public string OrderBy
+        {
+            get => orderBy;
+            set
+            {
+
+                orderBy = value;
+            }
+        }
     }
 }

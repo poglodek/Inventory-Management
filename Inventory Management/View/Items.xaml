@@ -13,9 +13,26 @@
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" Background="#445b91">
             <Button Content="Add Item" Style="{StaticResource MenuButton}" Width="100" Command="{Binding Path=AddItem}"  />
-                <Button Content="Edit Item" Style="{StaticResource MenuButton}" Command="{Binding Path=EditItem}" CommandParameter="{Binding ElementName=ListItem, Path=SelectedItem}"/>
+            <Button Content="Edit Item" Style="{StaticResource MenuButton}" Command="{Binding Path=EditItem}" CommandParameter="{Binding ElementName=ListItem, Path=SelectedItem}"/>
             <Button Content="Remove Item" Style="{StaticResource MenuButton}" Command="{Binding Path=RemoveItem}"/>
             <Button Content="Refresh" Style="{StaticResource MenuButton}" Command="{Binding Path=Refresh}"/>
+            <ComboBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" SelectedIndex="1" Width="140" Height="30" Background="#eba834" FontSize="15"
+                      Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}" Margin="10" >
+                    <ComboBoxItem Content="Added ^" />
+                    <ComboBoxItem Content="Added V" />
+                    <ComboBoxItem Content="Price ^" />
+                    <ComboBoxItem Content="Price V" />
+                    <ComboBoxItem Content="Tax ^" />
+                    <ComboBoxItem Content="Tax V" />
+                    <ComboBoxItem Content="Date Expiration ^" />
+                    <ComboBoxItem Content="Date Expiration V" />
+                    <ComboBoxItem Content="Name" />
+                    <ComboBox.Effect>
+                        <DropShadowEffect Color="Black" Direction="310" ShadowDepth="12" BlurRadius="9" Opacity="0.4" />
+                    </ComboBox.Effect>
+
+                </ComboBox>
+           
         </WrapPanel>
         <StackPanel Grid.Row="1">
             <ScrollViewer VerticalScrollBarVisibility="Auto" Height="600">

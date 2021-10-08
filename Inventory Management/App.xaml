@@ -63,17 +63,5 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style TargetType="{x:Type TextBox}" x:Key="TextBox">
-            <Setter Property="Background">
-                <Setter.Value>
-                    <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
-                        <GradientStop Color="#686b68" Offset="0"/>
-                        <GradientStop Color="#535453" Offset="0.5"/>
-                        <GradientStop Color="#686b68" Offset="1"/>
-                    </LinearGradientBrush>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="Foreground" Value="White" />
-        </Style>
     </Application.Resources>
 </Application>
