@@ -52,10 +52,9 @@ namespace Inventory_Management.ViewModel.Client
             set
             {
                 searchingParse = value;
-                if (string.IsNullOrWhiteSpace(searchingParse))
-                    SetList(_mongoDb.GetDocuments<Model.Client>("Clients"));
-                else
-                    SetList(OrderingServices.ClientSearchingParse(new List<Model.Client>(Clients), searchingParse));
+                SetList(string.IsNullOrWhiteSpace(searchingParse)
+                    ? _mongoDb.GetDocuments<Model.Client>("Clients")
+                    : OrderingServices.ClientSearchingParse(new List<Model.Client>(Clients), searchingParse));
             }
         }
     }

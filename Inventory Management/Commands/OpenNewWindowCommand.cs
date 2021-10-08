@@ -38,6 +38,10 @@ namespace Inventory_Management.Commands
                     if (parameter is null) return;
                     new EditItem(((Item)parameter).Id).Show();
                     break;
+                case "EditClient":
+                    if (parameter is null) return;
+                    new EditClient(((Client)parameter).Id).Show();
+                    break;
             }
         }
 
