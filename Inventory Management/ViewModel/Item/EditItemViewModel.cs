@@ -94,7 +94,6 @@ namespace Inventory_Management.ViewModel.Item
 
 
         #endregion
-
-        public ICommand EditCommand { get; set; }
+        public ICommand EditCommand{ get; set; }
     }
 }

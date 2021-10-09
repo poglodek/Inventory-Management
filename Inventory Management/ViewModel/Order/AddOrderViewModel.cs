@@ -112,6 +112,18 @@ namespace Inventory_Management.ViewModel.Order
                 return addItemToListCommand;
             }
         }
+        private ICommand clearListCommand;
+        public ICommand ClearListCommand
+        {
+            get
+            {
+                if (clearListCommand is null) clearListCommand = new RelayCommand(x =>
+                {
+                    SelectedItems.Clear();
+                });
+                return clearListCommand;
+            }
+        }
 
         private void AddItemToList(ObservableCollection<Model.Item> selectedItems, Model.Item selectedItem)
         {
