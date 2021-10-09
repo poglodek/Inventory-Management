@@ -49,6 +49,10 @@ namespace Inventory_Management.Commands
                     if (parameter is null) return;
                     new EditOrder(((Order)parameter).Id).Show();
                     break;
+                case "EOrder":
+                    if (parameter is null) return;
+                    new OrderView(((Order)parameter).Id).Show();
+                    break;
             }
         }
 

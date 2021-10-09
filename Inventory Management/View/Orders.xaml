@@ -15,7 +15,7 @@
             <Button Content="Add Order" Style="{StaticResource MenuButton}" Width="100" Command="{Binding Path=AddOrder}"  />
             <Button Content="Edit Order" Style="{StaticResource MenuButton}" Command="{Binding Path=EditOrder}" CommandParameter="{Binding ElementName=ListItem, Path=SelectedItem}"/>
             <Button Content="Remove Order" Style="{StaticResource MenuButton}" Command="{Binding Path=RemoveOrder}"/>
-            <Button Content="Show more Info" Style="{StaticResource MenuButton}" Command="{Binding Path=AboutOrder}"/>
+            <Button Content="Show more Info" Style="{StaticResource MenuButton}" Command="{Binding Path=AboutOrder}" CommandParameter="{Binding ElementName=ListItem, Path=SelectedItem}"/>
             <Button Content="Refresh" Style="{StaticResource MenuButton}" Command="{Binding Path=Refresh}"/>
             <TextBox Style="{StaticResource TextBox}" Width="170" Height="30" Foreground="Black" Background="#eba834" Text="{Binding Path=SearchingParse}" VerticalContentAlignment="Center">
                 <TextBox.Resources>

@@ -18,7 +18,7 @@ namespace Inventory_Management.ViewModel.Order
             RemoveOrder = new RemoveDocumentCommand<Model.Order>(this, "Orders", _mongoDb);
             AddOrder = new OpenNewWindowCommand("AddOrder");
             EditOrder = new OpenNewWindowCommand("EditOrder");
-            AboutOrder = new OpenNewWindowCommand("AboutOrder");
+            AboutOrder = new OpenNewWindowCommand("Order");
             Refresh = new RelayCommand(x =>
             {
                 SetList(_mongoDb.GetDocuments<Model.Order>("Orders"));
