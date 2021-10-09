@@ -12,5 +12,6 @@ namespace Inventory_Management.Model
         public DateTime DateAdded { get; set; }
         public DateTime? DateExpiration { get; set; }
         public override string ToString() => $"{Name}, {Price}, {Count}";
+
     }
 }

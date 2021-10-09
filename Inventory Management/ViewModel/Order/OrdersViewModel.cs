@@ -25,6 +25,7 @@ namespace Inventory_Management.ViewModel.Order
             });
         }
 
+        
 
         public Model.Order SelectedItem { get; set; }
         public void SetList(List<Model.Order> documents)
