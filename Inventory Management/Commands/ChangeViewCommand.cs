@@ -7,6 +7,7 @@ using System.Windows.Input;
 using Inventory_Management.ViewModel;
 using Inventory_Management.ViewModel.Client;
 using Inventory_Management.ViewModel.Item;
+using Inventory_Management.ViewModel.Order;
 
 namespace Inventory_Management.Commands
 {

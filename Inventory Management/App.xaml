@@ -5,7 +5,8 @@
              xmlns:views="clr-namespace:Inventory_Management.View"
              xmlns:viewModel="clr-namespace:Inventory_Management.ViewModel"
              xmlns:item="clr-namespace:Inventory_Management.ViewModel.Item"
-             xmlns:client="clr-namespace:Inventory_Management.ViewModel.Client">
+             xmlns:client="clr-namespace:Inventory_Management.ViewModel.Client"
+             xmlns:order="clr-namespace:Inventory_Management.ViewModel.Order">
     <Application.Resources>
         <DataTemplate DataType="{x:Type item:ItemsViewModel}">
             <views:Items />
@@ -19,7 +20,7 @@
         <DataTemplate DataType="{x:Type viewModel:MyDataViewModel}">
             <views:MyData />
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:OrdersViewModel}">
+        <DataTemplate DataType="{x:Type order:OrdersViewModel}">
             <views:Orders />
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:StockTakingViewModel}">

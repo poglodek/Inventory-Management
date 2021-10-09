@@ -10,23 +10,21 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Inventory_Management.ViewModel;
 using Inventory_Management.ViewModel.Order;
-
 
 namespace Inventory_Management.View
 {
     /// <summary>
-    /// Interaction logic for Orders.xaml
+    /// Interaction logic for AddOrder.xaml
     /// </summary>
-    public partial class Orders : UserControl
+    public partial class AddOrder : Window
     {
-        public Orders()
+        public AddOrder()
         {
             InitializeComponent();
-            DataContext = new OrdersViewModel();
+
+            DataContext = new AddOrderViewModel();
         }
     }
 }
