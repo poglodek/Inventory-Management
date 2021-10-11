@@ -28,5 +28,12 @@ namespace Inventory_Management.Services
             if(regex.IsMatch(phoneNumber.ToString())) return true;
             return false;
         }
+
+        public bool IsNIPValid(int nip)
+        {
+            var regex = new Regex(@"^[0-9]{10}$");
+            if(regex.IsMatch(nip.ToString())) return true;
+            return false;
+        }
     }
 }

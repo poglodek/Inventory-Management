@@ -4,5 +4,6 @@
     {
         bool IsEmailValid(string email);
         bool IsPhoneNumberValid(int phoneNumber);
+        bool IsNIPValid(int nip);
     }
 }
