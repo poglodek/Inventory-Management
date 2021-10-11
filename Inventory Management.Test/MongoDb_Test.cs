@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Inventory_Management.Database;
+﻿using Inventory_Management.Database;
 using Inventory_Management.Model;
 using Moq;
 using NUnit.Framework;
@@ -35,7 +30,7 @@ namespace Inventory_Management.Test
             Assert.IsTrue(result);
 
 
-            var removeResult = mongoDb.RemoveDocumentById<Item>("Items",item.Id);
+            var removeResult = mongoDb.RemoveDocumentById<Item>("Items", item.Id);
             Assert.IsTrue(removeResult);
         }
 
@@ -51,7 +46,7 @@ namespace Inventory_Management.Test
         public void MongoDb_Get_Documents_Should_Return_Greater_Than_0()
         {
             var mongoDb = new Mock<MongoDb>("InventoryManagement").Object;
-            var list =mongoDb.GetDocuments<Item>("Items");
+            var list = mongoDb.GetDocuments<Item>("Items");
             Assert.Greater(list.Count, 0);
         }
         [Test]
@@ -74,7 +69,7 @@ namespace Inventory_Management.Test
                 Price = 99.99,
                 Tax = 19.0
             };
-            mongoDb.UpdateDocument("Items",item,id);
+            mongoDb.UpdateDocument("Items", item, id);
         }
     }
 }

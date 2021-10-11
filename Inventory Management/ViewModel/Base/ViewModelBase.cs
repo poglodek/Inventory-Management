@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Inventory_Management.Database;
+using Inventory_Management.Services;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
-using System.Windows.Input;
-using Inventory_Management.Database;
-using Inventory_Management.Services;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Inventory_Management.ViewModel.Base
 {
@@ -19,7 +17,7 @@ namespace Inventory_Management.ViewModel.Base
         private Dictionary<string, List<string>> _propertyErrors;
         protected IOrderingServices OrderingServices;
         protected IValidationServices ValidationServices;
-        
+
         public ViewModelBase()
         {
             _mongoDb = new MongoDb("InventoryManagement");
@@ -31,10 +29,10 @@ namespace Inventory_Management.ViewModel.Base
         {
             foreach (var property in nameProperty)
                 if (property != null) PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
-            
+
         }
 
-        
+
         public IEnumerable GetErrors(string? propertyName)
         {
             return _propertyErrors.GetValueOrDefault(propertyName, null);
@@ -58,10 +56,10 @@ namespace Inventory_Management.ViewModel.Base
             }
             _propertyErrors[propertyName].Add(errorMessage);
             foreach (var error in _propertyErrors)
-                 foreach (var message in error.Value)
-                 {
-                     MessageBox.Show(message);
-                 }
+                foreach (var message in error.Value)
+                {
+                    MessageBox.Show(message);
+                }
         }
 
         protected void OnErrorsChanged(string propertyName)

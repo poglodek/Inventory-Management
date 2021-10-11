@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Inventory_Management.Commands;
+﻿using Inventory_Management.Commands;
 using Inventory_Management.ViewModel.Base;
+using System;
+using System.Windows.Input;
 
 namespace Inventory_Management.ViewModel.Item
 {
@@ -15,7 +11,7 @@ namespace Inventory_Management.ViewModel.Item
         {
             Document = new Model.Item();
             Document.DateAdded = DateTime.Now;
-            AddDocument = new AddDocumentCommand<Model.Item>(this,this, _mongoDb, "Items");
+            AddDocument = new AddDocumentCommand<Model.Item>(this, this, _mongoDb, "Items");
         }
 
         #region prop
@@ -49,7 +45,7 @@ namespace Inventory_Management.ViewModel.Item
                 }
                 else
                     Document.Price = value;
-                
+
             }
         }
         public double Tax
@@ -84,17 +80,17 @@ namespace Inventory_Management.ViewModel.Item
         }
 
         public DateTime? DateExpiration
-        { 
+        {
             get => Document.DateExpiration;
             set
             {
                 Document.DateExpiration = value;
-            } 
+            }
         }
 
 
         #endregion
         public ICommand AddDocument { get; set; }
-        
+
     }
 }

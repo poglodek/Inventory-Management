@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Inventory_Management.Model;
+﻿using Inventory_Management.Model;
 using Inventory_Management.View;
-using Inventory_Management.ViewModel.Item;
+using System;
+using System.Windows.Input;
 
 namespace Inventory_Management.Commands
 {

@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Inventory_Management.Model;
+﻿using Inventory_Management.Model;
+using System.Collections.Generic;
 
 namespace Inventory_Management.Services
 {

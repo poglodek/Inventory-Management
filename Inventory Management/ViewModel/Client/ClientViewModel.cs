@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Inventory_Management.Commands;
+﻿using Inventory_Management.Commands;
 using Inventory_Management.ViewModel.Base;
+using System.Windows.Input;
 
 namespace Inventory_Management.ViewModel.Client
 {
-    public class ClientViewModel :ViewModelBase, DocumentViewModel<Model.Client>
+    public class ClientViewModel : ViewModelBase, DocumentViewModel<Model.Client>
     {
-        
+
         public ICommand AddDocument { get; set; }
         public ClientViewModel()
         {
@@ -61,7 +55,7 @@ namespace Inventory_Management.ViewModel.Client
             set
             {
                 ClearErrors(nameof(Email));
-                
+
                 if (!ValidationServices.IsEmailValid(value))
                 {
                     AddError(nameof(Email), "Email is in valid.");

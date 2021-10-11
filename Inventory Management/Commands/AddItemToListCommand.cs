@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Inventory_Management.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using Inventory_Management.Model;
 
 namespace Inventory_Management.Commands
 {
@@ -29,7 +27,7 @@ namespace Inventory_Management.Commands
             {
                 _selectedItem.Count = 1;
                 _selectedItems.Add(_selectedItem);
-            } 
+            }
         }
 
         public event EventHandler? CanExecuteChanged;

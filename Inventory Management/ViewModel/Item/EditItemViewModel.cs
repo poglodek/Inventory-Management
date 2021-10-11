@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Inventory_Management.Commands;
+﻿using Inventory_Management.Commands;
 using Inventory_Management.ViewModel.Base;
+using System;
+using System.Windows.Input;
 
 namespace Inventory_Management.ViewModel.Item
 {
@@ -94,6 +89,6 @@ namespace Inventory_Management.ViewModel.Item
 
 
         #endregion
-        public ICommand EditCommand{ get; set; }
+        public ICommand EditCommand { get; set; }
     }
 }

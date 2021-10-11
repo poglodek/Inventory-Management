@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 
 namespace Inventory_Management.Database
 {
@@ -26,7 +21,7 @@ namespace Inventory_Management.Database
         public T GetDocumentById<T>(string collectionName, Guid id)
         {
             var collection = _mongoDatabase.GetCollection<T>(collectionName);
-            var filter = Builders<T>.Filter.Eq("_id",id);
+            var filter = Builders<T>.Filter.Eq("_id", id);
             return collection.Find(filter).FirstOrDefault();
         }
         public List<T> GetDocumentsByPropertyName<T>(string collectionName, string propertyName, object value)

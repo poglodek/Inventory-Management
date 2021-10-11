@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMoq;
+﻿using AutoMoq;
 using Inventory_Management.Commands;
 using Inventory_Management.Database;
 using Inventory_Management.Model;
 using Inventory_Management.ViewModel.Base;
-using Inventory_Management.ViewModel.Item;
 using Moq;
 using NUnit.Framework;
 

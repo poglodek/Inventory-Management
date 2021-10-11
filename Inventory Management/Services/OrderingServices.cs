@@ -1,10 +1,6 @@
-﻿using System;
+﻿using Inventory_Management.Model;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
-using Inventory_Management.Model;
 
 namespace Inventory_Management.Services
 {
@@ -20,7 +16,7 @@ namespace Inventory_Management.Services
                     orderedList = list;
                     break;
                 case "Price":
-                    orderedList =  list.OrderBy(x => x.Price).ToList();
+                    orderedList = list.OrderBy(x => x.Price).ToList();
                     break;
                 case "Tax":
                     orderedList = list.OrderBy(x => x.Tax).ToList();
@@ -51,7 +47,7 @@ namespace Inventory_Management.Services
 
         public List<Order> ClientSearchingParse(List<Order> list, string searchingParse)
         {
-            return list.Where(x=>x.Client.Name.ToUpper().Contains(searchingParse.ToUpper())).ToList();
+            return list.Where(x => x.Client.Name.ToUpper().Contains(searchingParse.ToUpper())).ToList();
         }
     }
 }

@@ -1,12 +1,10 @@
-﻿using System;
+﻿using Inventory_Management.Commands;
+using Inventory_Management.ViewModel.Base;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
-using Inventory_Management.Commands;
-using Inventory_Management.ViewModel.Base;
 
 namespace Inventory_Management.ViewModel.Order
 {
@@ -20,14 +18,14 @@ namespace Inventory_Management.ViewModel.Order
         public EditOrderViewModel(Guid id)
         {
             ItemsFromDb = _mongoDb.GetDocuments<Model.Item>("Items");
-            Document = _mongoDb.GetDocumentById<Model.Order>("Orders",id);
+            Document = _mongoDb.GetDocumentById<Model.Order>("Orders", id);
             SelectedItems = new ObservableCollection<Model.Item>(Document.Items);
             OnPropertyChanged(nameof(Document));
             ItemsFromOrder = new List<Model.Item>(Document.Items);
         }
 
         private ICommand editCommand;
-        public ICommand EditCommand 
+        public ICommand EditCommand
         {
             get
             {

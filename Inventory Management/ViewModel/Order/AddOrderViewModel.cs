@@ -1,30 +1,26 @@
-﻿using System;
+﻿using Inventory_Management.Commands;
+using Inventory_Management.ViewModel.Base;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 using System.Windows.Input;
-using Inventory_Management.Commands;
-using Inventory_Management.View;
-using Inventory_Management.ViewModel.Base;
 
 namespace Inventory_Management.ViewModel.Order
 {
     public class AddOrderViewModel : ViewModelBase, DocumentViewModel<Model.Order>
     {
         public Model.Order Document { get; set; }
-        public List<Model.Client> Clients {  get; set; }
-        public List<Model.Item> ItemsFromDb {  get; set; }
-        public ObservableCollection<Model.Item> SelectedItems {get; set;}
-        public Model.Item SelectedItem {  get; set; }
-        
+        public List<Model.Client> Clients { get; set; }
+        public List<Model.Item> ItemsFromDb { get; set; }
+        public ObservableCollection<Model.Item> SelectedItems { get; set; }
+        public Model.Item SelectedItem { get; set; }
+
 
         public AddOrderViewModel()
         {
             Clients = _mongoDb.GetDocuments<Model.Client>("Clients");
-            ItemsFromDb = _mongoDb.GetDocuments<Model.Item>("Items") ;
+            ItemsFromDb = _mongoDb.GetDocuments<Model.Item>("Items");
             Document = new Model.Order();
             SelectedItems = new ObservableCollection<Model.Item>();
             DateOfBuy = DateTime.Now;
@@ -141,6 +137,6 @@ namespace Inventory_Management.ViewModel.Order
             }
         }
 
-        
+
     }
 }

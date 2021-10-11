@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Inventory_Management.Services;
+﻿using Inventory_Management.Services;
 using NUnit.Framework;
 
 namespace Inventory_Management.Test.Services

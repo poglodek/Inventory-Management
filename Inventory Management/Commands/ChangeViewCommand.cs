@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Inventory_Management.ViewModel;
+﻿using Inventory_Management.ViewModel;
 using Inventory_Management.ViewModel.Client;
 using Inventory_Management.ViewModel.Item;
 using Inventory_Management.ViewModel.Order;
+using System;
+using System.Windows.Input;
 
 namespace Inventory_Management.Commands
 {
@@ -48,8 +44,8 @@ namespace Inventory_Management.Commands
                     _viewModel.ViewModel = new OrdersViewModel();
                     break;
             }
-                
-            
+
+
         }
 
         public event EventHandler? CanExecuteChanged;

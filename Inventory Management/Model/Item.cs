@@ -1,9 +1,9 @@
-﻿using System;
-using Inventory_Management.Database;
+﻿using Inventory_Management.Database;
+using System;
 
 namespace Inventory_Management.Model
 {
-    public class Item :BaseEntity
+    public class Item : BaseEntity
     {
         public string Name { get; set; }
         public double Price { get; set; }

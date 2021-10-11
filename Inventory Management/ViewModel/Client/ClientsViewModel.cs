@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Inventory_Management.Commands;
+using Inventory_Management.ViewModel.Base;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Inventory_Management.Commands;
-using Inventory_Management.View;
-using Inventory_Management.ViewModel.Base;
 
 namespace Inventory_Management.ViewModel.Client
 {

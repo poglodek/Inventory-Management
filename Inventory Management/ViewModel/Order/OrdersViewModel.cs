@@ -1,10 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Windows.Input;
-using Inventory_Management.Commands;
-using Inventory_Management.View;
+﻿using Inventory_Management.Commands;
 using Inventory_Management.ViewModel.Base;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace Inventory_Management.ViewModel.Order
 {
@@ -25,7 +23,7 @@ namespace Inventory_Management.ViewModel.Order
             });
         }
 
-        
+
 
         public Model.Order SelectedItem { get; set; }
         public void SetList(List<Model.Order> documents)

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Inventory_Management.Model;
+﻿using Inventory_Management.Model;
 using Inventory_Management.Services;
 using NUnit.Framework;
 
@@ -39,7 +34,7 @@ namespace Inventory_Management.Test.Services
             {
                 new Item() { Name = "Metal Desk" },
                 new Item() { Name = "Wooden Chair"}
-                
+
             };
             var testingList = services.ItemOrderBy(list, true, "Name");
 
@@ -104,7 +99,7 @@ namespace Inventory_Management.Test.Services
             {
                 new Item() { Name = "Metal Desk", Price=10 , DateAdded= DateTime.Now},
                 new Item() { Name = "Wooden Chair", Price=13, DateAdded= DateTime.Now.AddDays(1) }
-                
+
 
             };
             Assert.AreEqual(orderedList.First().Name, testingList.First().Name);
@@ -157,7 +152,7 @@ namespace Inventory_Management.Test.Services
                 new Item() { Name = "Wooden Chair", Price=13, DateExpiration= DateTime.Now.AddDays(1) },
                 new Item() { Name = "Metal Desk", Price=10 }
             };
-            var testingList = services.ItemSearchingParse(list,"dEsk");
+            var testingList = services.ItemSearchingParse(list, "dEsk");
 
             Assert.AreEqual(1, testingList.Count);
         }
@@ -172,7 +167,7 @@ namespace Inventory_Management.Test.Services
             };
             var testingList = services.ItemSearchingParse(list, "Pen");
 
-            Assert.AreEqual(0,testingList.Count);
+            Assert.AreEqual(0, testingList.Count);
         }
         [Test]
         public void OrderingServices_Item_SearchingParse_Should_Return_2()

@@ -1,18 +1,16 @@
-﻿using System;
+﻿using Inventory_Management.Commands;
+using Inventory_Management.ViewModel.Base;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Windows.Documents;
 using System.Windows.Input;
-using Inventory_Management.Commands;
-using Inventory_Management.View;
-using Inventory_Management.ViewModel.Base;
 
 
 namespace Inventory_Management.ViewModel.Item
 {
     public class ItemsViewModel : ViewModelBase, DocumentsViewModelBase<Model.Item>
     {
-        private List<Tuple<bool,string>> OrderStatus = new List<Tuple<bool, string>> ()
+        private List<Tuple<bool, string>> OrderStatus = new List<Tuple<bool, string>>()
         {
             new(false,"Added"),
             new(true,"Added"),
@@ -25,13 +23,13 @@ namespace Inventory_Management.ViewModel.Item
             new(false,"Name"),
             new(true,"Name")
         };
-        
-        public ObservableCollection<Model.Item> Items { get; set; } 
+
+        public ObservableCollection<Model.Item> Items { get; set; }
         public ItemsViewModel()
         {
             Items = new ObservableCollection<Model.Item>();
             SetList(_mongoDb.GetDocuments<Model.Item>("Items"));
-            RemoveItem = new RemoveDocumentCommand<Model.Item>(this,"Items",_mongoDb);
+            RemoveItem = new RemoveDocumentCommand<Model.Item>(this, "Items", _mongoDb);
             AddItem = new OpenNewWindowCommand("AddItem");
             EditItem = new OpenNewWindowCommand("EditItem");
             Refresh = new RelayCommand(x =>
@@ -40,7 +38,7 @@ namespace Inventory_Management.ViewModel.Item
             });
         }
 
-        
+
         public void SetList(List<Model.Item> documents)
         {
             Items.Clear();
@@ -89,7 +87,7 @@ namespace Inventory_Management.ViewModel.Item
             set
             {
                 searchingParse = value;
-                if(string.IsNullOrWhiteSpace(searchingParse))
+                if (string.IsNullOrWhiteSpace(searchingParse))
                     SetList(_mongoDb.GetDocuments<Model.Item>("Items"));
                 else
                     SetList(OrderingServices.ItemSearchingParse(new List<Model.Item>(Items), searchingParse));

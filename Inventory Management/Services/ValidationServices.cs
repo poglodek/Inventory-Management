@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Mail;
-using System.Text;
+﻿using System.Net.Mail;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Inventory_Management.Services
 {
@@ -25,14 +20,14 @@ namespace Inventory_Management.Services
         public bool IsPhoneNumberValid(int phoneNumber)
         {
             var regex = new Regex(@"[0-9]{9}$");
-            if(regex.IsMatch(phoneNumber.ToString())) return true;
+            if (regex.IsMatch(phoneNumber.ToString())) return true;
             return false;
         }
 
         public bool IsNIPValid(int nip)
         {
             var regex = new Regex(@"^[0-9]{10}$");
-            if(regex.IsMatch(nip.ToString())) return true;
+            if (regex.IsMatch(nip.ToString())) return true;
             return false;
         }
     }

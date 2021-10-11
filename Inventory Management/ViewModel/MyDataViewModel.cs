@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Inventory_Management.Model;
+﻿using Inventory_Management.Model;
 using Inventory_Management.Services;
 using Inventory_Management.ViewModel.Base;
+using System.Windows.Input;
 
 namespace Inventory_Management.ViewModel
 {
@@ -90,5 +86,6 @@ namespace Inventory_Management.ViewModel
                     config.Email = value;
             }
         }
+        public ICommand SaveData { get; set; }
     }
 }

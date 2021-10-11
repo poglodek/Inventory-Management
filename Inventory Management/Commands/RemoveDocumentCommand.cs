@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Inventory_Management.Database;
+using Inventory_Management.ViewModel.Base;
+using System;
 using System.Windows;
 using System.Windows.Input;
-using Inventory_Management.Database;
-using Inventory_Management.Model;
-using Inventory_Management.ViewModel.Base;
 
 namespace Inventory_Management.Commands
 {
@@ -27,13 +22,13 @@ namespace Inventory_Management.Commands
         public bool CanExecute(object? parameter) => true;
 
         public void Execute(object? parameter)
-        { 
+        {
             if (_vm.SelectedItem is null) return;
             var result = MessageBox.Show("Delete this item?", "Delete", MessageBoxButton.OKCancel,
                 MessageBoxImage.Warning);
             if (result == MessageBoxResult.Cancel || result == MessageBoxResult.No) return;
-           _mongoDb.RemoveDocumentById<T>(_collectionName, _vm.SelectedItem.Id);
-           _vm.SetList(_mongoDb.GetDocuments<T>(_collectionName));
+            _mongoDb.RemoveDocumentById<T>(_collectionName, _vm.SelectedItem.Id);
+            _vm.SetList(_mongoDb.GetDocuments<T>(_collectionName));
         }
 
 

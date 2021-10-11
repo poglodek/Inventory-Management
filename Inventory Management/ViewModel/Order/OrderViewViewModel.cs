@@ -1,10 +1,6 @@
-﻿using System;
+﻿using Inventory_Management.ViewModel.Base;
+using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Inventory_Management.ViewModel.Base;
 
 namespace Inventory_Management.ViewModel.Order
 {
