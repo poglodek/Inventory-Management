@@ -1,4 +1,5 @@
-# TaskingoWPF
+# Inventory-Management
+
 WPF in MVVM app, with connect to Mongo DB. Testin in NUnit.
 <hr>
 
