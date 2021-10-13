@@ -21,6 +21,6 @@ WPF in MVVM app, with connect to Mongo DB. Testin in NUnit.
 
 
 # TODO
-- Token Expire reminder
-- Notification of receipt of the message
+- StockTaking
+- Login Screen
 <hr>
